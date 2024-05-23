@@ -132,7 +132,7 @@ export default function Marketplace() {
             </Flex>
             <Flex flexDirection='row' gap='10px'>
               <Box bg='white' width='100%' height='15vh' borderRadius='10px'>
-                <PieChart />
+              
               </Box>
               <Box bg='white' width='100%' height='15vh' borderRadius='10px'></Box>
             </Flex>
