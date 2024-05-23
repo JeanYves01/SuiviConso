@@ -1,0 +1,11 @@
+.sidebar-link.active {
+    color: inherit;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 5px;
+  }
+
+  .sidebar-link:hover,
+.sidebar-link:active {
+  background-color: #ffffff26;
+}
