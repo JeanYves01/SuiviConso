@@ -120,7 +120,7 @@ export default function AuthNavbar(props) {
         justifyContent='center'
         alignItems='center'
         color={mainText}>
-        <HorizonLogo h='26px' w='175px' my='32px' color={logoColor} />
+        
       </Link>
     );
     // mainText = useColorModeValue("gray.700", "gray.200");

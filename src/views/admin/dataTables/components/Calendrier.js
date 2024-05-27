@@ -24,7 +24,7 @@ export default function DropdownCalendar(props) {
                 selected={selectedDate2} // Propriété pour définir la date sélectionnée
                 onChange={handleDate2Change} // Callback appelé lorsque la date est changée
                 dateFormat="dd/MM/yyyy" // Format de date à afficher
-                placeholderText="Date de fn" // Texte d'invite dans le calendrier déroulant
+                placeholderText="Date de fin" // Texte d'invite dans le calendrier déroulant
             />
             {/* Affiche la date sélectionnée si elle existe */}
             {selectedDate1 && (

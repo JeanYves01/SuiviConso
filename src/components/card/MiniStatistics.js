@@ -21,13 +21,15 @@ export default function Default(props) {
   return (
     <Card  
    border='1px solid rgba(90, 88, 88, 0.2)'
+
    >
       
       <Flex
         my='auto'
         h='100%'
         align={{ base: "center", xl: "start" }}
-        justify={{ base: "center", xl: "center" }}>
+        justify={{ base: "center", xl: "center" }}
+        cursor='pointer'>
         {style}
         {startContent}
 
@@ -37,15 +39,18 @@ export default function Default(props) {
             color={textColorSecondary}
             fontSize={{
               base: "sm",
-            }}>
+              md: "xl",
+              lg: "xl"
+            }}
+            transform='translate(-8%,0%)'>
             {name}
           </StatLabel>
           <StatNumber
             color={textColor}
-            mt='58px'
+            mt='55px'
             fontSize={{
               base: "xl",
-            }}>
+            }} transform='translate(6%,0%)'>
             {value}
           </StatNumber>
           

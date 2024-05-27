@@ -5,12 +5,12 @@ import { Box, Center } from '@chakra-ui/react';
 
 const RADIAN = Math.PI / 180;
 const data = [
-  { name: 'A', value: 30, color: '#84F8FF' },
-  { name: 'B', value: 50, color: '#FF0000' },
+  { name: 'A', value: 30, color: 'url(#grad1)' }, // Use gradient ID
+  { name: 'B', value: 50, color: 'url(#grad2)' },
   // { name: 'C', value: 25, color: '#0000ff' },
 ];
 const cx = 150;
-const cy = 200;
+const cy = 80;
 const iR = 40;
 const oR = 50;
 const value = 50;
@@ -42,9 +42,19 @@ const needle = (value, data, cx, cy, iR, oR, color) => {
 
 export default function MyPieChart(props) {
   return (
-    <Center height="100%" background="red">
-      <Box width="50%" height="50%">
-        <PieChart width={400} height={500}>
+
+      <Box width="50%" height="15vh" bg='white' borderRadius='10px'>
+        <PieChart width={400} height={500} >
+        <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{ stopColor: '#84F8FF', stopOpacity: 1}} />
+              <stop offset="100%" style={{ stopColor: '#84F8FF', stopOpacity: 0.1 }} />
+            </linearGradient>
+            <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{ stopColor: '#FF0000', stopOpacity: 0.1 }} />
+              <stop offset="100%" style={{ stopColor: '#FF0000', stopOpacity:  0.8}} />
+            </linearGradient>
+          </defs>
           <Pie
             dataKey="value"
             startAngle={180}
@@ -64,6 +74,6 @@ export default function MyPieChart(props) {
           {needle(value, data, cx, cy, iR, oR, '#ECE9FF')}
         </PieChart>
       </Box>
-    </Center>
+
   );
 }

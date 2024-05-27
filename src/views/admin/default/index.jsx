@@ -22,14 +22,28 @@
 
 // Chakra imports
 import {
-  Avatar,
+
   Box,
   Flex,
   FormLabel,
   Icon,
   Select,
   SimpleGrid,
+
+  Avatar,
+  Button,
+
+
+  Image,
+  Link,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Text,
   useColorModeValue,
+
+  Input,
 } from "@chakra-ui/react";
 // Assets
 import Usa from "assets/img/dashboards/usa.png";
@@ -44,6 +58,7 @@ import {
   MdAddTask,
   MdAttachMoney,
   MdBarChart,
+  MdDateRange,
   MdFileCopy,
 } from "react-icons/md";
 import CheckTable from "views/admin/default/components/CheckTable";
@@ -67,47 +82,102 @@ export default function UserReports() {
   const blueColor = "#BBF5FF";
   const boxBg = useColorModeValue("orange.50", "");
   const bgSeuil = useColorModeValue("orange.50", "whiteAlpha.100");
+  let menuBg = useColorModeValue('white', 'navy.800');
+  const textColor = useColorModeValue('secondaryGray.900', 'white');
+  const shadow = useColorModeValue(
+    '14px 17px 40px 4px rgba(112, 144, 176, 0.18)',
+    '14px 17px 40px 4px rgba(112, 144, 176, 0.06)'
+  );
+  const borderColor = useColorModeValue('#E6ECFA', 'rgba(135, 140, 189, 0.3)');
   return (
     <Box pt={{ base: "120px", md: "80px", xl: "80px" }} marginLeft='40px' marginRight='40px'>
       <SimpleGrid
         columns={{ base: 1, md: 1, lg: 3, "2xl": 6 }}
         gap='20px'
-     
-        
+
+
       >
-        <Seuil
-        
-          startContent={
-            <Icon mt='70px' w='28px' h='28px' as={MdBarChart} color={brandColor} />
-          }
-          name='Seuil de consommation'
-          value='90 kWh'
-        />
+        <Menu>
+          <MenuButton >
+            <Seuil
+              
+              startContent={
+                <Icon mt='75px' w='20px' h='30px' as={MdBarChart} color={brandColor} />
+              }
+              name='Seuil de consommation'
+              value='90 kWh'
+
+            />
+          </MenuButton>
+          <MenuList boxShadow={shadow} p="0px" mt="10px" borderRadius="15px" bg={menuBg} border="none">
+            <Flex w="100%" mb="0px" borderBottom="1px solid" borderColor={borderColor}>
+              <Text
+                ps="20px"
+                pt="16px"
+                pb="10px"
+                w="80%"
+
+                borderColor={borderColor}
+                fontSize="sm"
+                fontWeight="700"
+                color={textColor}>
+                Choisir la période
+              </Text>
+              <Icon as={MdDateRange} color={brandColor} transform='translate(0%,120%)' />
+            </Flex>
+            <Flex flexDirection="row" p="25px">
+              <FormLabel
+                display='flex'
+                ms='4px'
+                fontSize='sm'
+                fontWeight='500'
+                color={textColor}
+
+              >
+                Définir le seuil en (kWh)
+              </FormLabel>
+              <Input
+                isRequired
+                variant='auth'
+                fontSize='sm'
+                type='text'
+                placeholder='86'
+
+                fontWeight='500'
+                width={{ base: "70px", md: "70px", xl: "70px" }}
+                height={{ base: "30px", md: "30px", xl: "30px" }}
+                borderRadius='8px'
+
+              />
+            </Flex>
+          </MenuList>
+        </Menu>
+
         <MiniStatistics
           startContent={
-            <Icon mt='70px' w='28px' h='28px' as={MdAttachMoney} color={brandColor} />
+            <Icon mt='75px' w='20px' h='30px' as={MdBarChart} color={brandColor} />
           }
 
           name='Energie consommée'
           value='76 kWh'
+
         />
         <Remaning
           startContent={
-            <Icon mt='70px' w='28px' h='28px' as={MdAttachMoney} color={brandColor} />
+            <Icon mt='75px' w='20px' h='30px' as={MdAttachMoney} color={brandColor} />
           }
           pt='0px'
           name='Marge de consommation restante'
           value='14 kWh'
         />
       </SimpleGrid>
-      
+
 
 
       <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px' mb='20px'>
         <TotalSpent />
-        {/* <WeeklyRevenue /> */}
+
       </SimpleGrid>
-      <PieCard/>
     </Box>
   );
 }

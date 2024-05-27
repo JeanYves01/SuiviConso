@@ -10,6 +10,7 @@ import {
 // Custom components
 import Card from "components/card/Card.js";
 import LineChart from "components/charts/LineChart";
+import DropdownCalendar from "views/admin/dataTables/components/Calendrier";
 import React from "react";
 import { IoCheckmarkCircle } from "react-icons/io5";
 import { MdBarChart, MdOutlineCalendarToday } from "react-icons/md";
@@ -46,8 +47,8 @@ export default function TotalSpent(props) {
       mt='25px'
       {...rest}
     >
-      <Flex justify='space-between' px='20px' pt='5px'>
-        <Flex w='100%'  flexDirection={{ base: 'column', md: 'row' }} align='center'>
+     
+        <Flex w='100%'  flexDirection={{ base: 'column', md: 'row' }} align='center' gap='300px'>
           <Text
             color={textColor}
             fontSize='xl'
@@ -57,21 +58,9 @@ export default function TotalSpent(props) {
           >
             Consommation depuis le dernier mois
           </Text>
-          <Button
-            bg={boxBg}
-            fontSize='sm'
-            fontWeight='500'
-            ml={{ base: '0', md: 'auto' }}
-            mt={{ base: '10px', md: '0' }}
-            color={textColorSecondary}
-            borderRadius='7px'
-            alignSelf={{ base: 'center', md: 'flex-end' }}
-          >
-            <Icon as={MdOutlineCalendarToday} color={textColorSecondary} mr='4px' />
-            Cette semaine
-          </Button>
+          <DropdownCalendar/>
         </Flex>
-      </Flex>
+    
       <Flex w='100%' flexDirection={{ base: 'column', lg: 'row' }} align='center'>
         <Box minH='260px' w={{ base: '100%', lg: '90%' }} mt='15px'>
           <LineChart />

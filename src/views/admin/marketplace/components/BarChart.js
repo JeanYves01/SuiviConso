@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Box, Heading, Flex } from '@chakra-ui/react';
+import { Box, Heading, Flex, Text } from '@chakra-ui/react';
 import DropdownCalendar from "views/admin/dataTables/components/Calendrier";
 import CommonlyUsedComponents from "views/admin/dataTables/components/Demo";
 
@@ -87,7 +87,7 @@ export default class Example extends PureComponent {
       <Box width='100%' height="41vh" bg='white' borderRadius='10px'>
         <Box w="100%" marginTop='10px'>
           <Flex gap='100px' mt='20px' ml='15px'>
-            <Heading size="sm" marginBottom='50px'>Historique</Heading>
+            <Text fontSize="xl" marginBottom='50px' >Historique</Text>
 
             <DropdownCalendar/>
           </Flex>

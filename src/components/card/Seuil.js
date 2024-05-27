@@ -26,7 +26,8 @@ import {
           my='auto'
           h='100%'
           align={{ base: "center", xl: "start" }}
-          justify={{ base: "center", xl: "center" }}>
+          justify={{ base: "center", xl: "start" }}
+          cursor='pointer'>
           {style}
           {startContent}
   
@@ -36,15 +37,19 @@ import {
               color={textColorSecondary}
               fontSize={{
                 base: "sm",
-              }}>
+                md: "xl",
+                lg: "xl"
+              }}
+              transform='translate(-20%,0%)'>
               {name}
             </StatLabel>
             <StatNumber
               color={textColor}
-              mt='58px'
+              mt='56px'
               fontSize={{
                 base: "xl",
-              }}>
+              }}
+              transform='translate(-30%,0%)'>
               {value}
             </StatNumber>
             {growth ? (

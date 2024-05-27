@@ -25,9 +25,7 @@ export default function Conversion(props) {
         alignItems='center'
         w='100%'
         mb='8px'>
-        <Text color={textColor} fontSize='md' fontWeight='600' mt='4px'>
-          Your Pie Chart
-        </Text>
+       
         <Select
           fontSize='sm'
           variant='subtle'

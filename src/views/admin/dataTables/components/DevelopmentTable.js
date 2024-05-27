@@ -56,7 +56,7 @@ export default function DevelopmentTable(props) {
         <SimpleGrid
           columns={{ base: 1, md: 4, lg: 4, "2xl": 6 }}
           width={{ base: 'auto', md: '100%', lg: '100%' }}
-          gap='20px'
+          gap='15px'
           mb='0px'
           mt='15px'
           justifyContent='center'
@@ -117,7 +117,7 @@ export default function DevelopmentTable(props) {
               <Tr key={index}>
                 <Td>02/04-04/04 2024</Td>
                 <Td>02</Td>
-                <Td>15</Td>
+                <Td transform='translate(50%,0%)'>15</Td>
                 <Td isNumeric>5.4</Td>
               </Tr>
             ))}

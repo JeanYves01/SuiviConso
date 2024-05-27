@@ -1,24 +1,3 @@
-/*!
-  _   _  ___  ____  ___ ________  _   _   _   _ ___   
- | | | |/ _ \|  _ \|_ _|__  / _ \| \ | | | | | |_ _| 
- | |_| | | | | |_) || |  / / | | |  \| | | | | || | 
- |  _  | |_| |  _ < | | / /| |_| | |\  | | |_| || |
- |_| |_|\___/|_| \_\___/____\___/|_| \_|  \___/|___|
-                                                                                                                                                                                                                                                                                                                                       
-=========================================================
-* Horizon UI - v1.1.0
-=========================================================
-
-* Product Page: https://www.horizon-ui.com/
-* Copyright 2023 Horizon UI (https://www.horizon-ui.com/)
-
-* Designed and Coded by Simmmple
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 
 import React from "react";
 
@@ -82,11 +61,14 @@ export default function Marketplace() {
   const textColor = useColorModeValue("secondaryGray.900", "white");
   const textColorBrand = useColorModeValue("brand.500", "white");
   return (
-    <Box pt={{ base: "180px", md: "80px", xl: "80px" }} >
+    <Box pt={{ base: "180px", md: "80px", xl: "80px", }} >
       {/* Main Fields */}
       <Flex
+        width='100%'
+        display='flex'
         flexDirection='row'
-        margin='auto'
+
+
       >
         <Flex
           flexDirection='column'
@@ -130,11 +112,12 @@ export default function Marketplace() {
                 </Flex>
               </Box>
             </Flex>
+
             <Flex flexDirection='row' gap='10px'>
-              <Box bg='white' width='100%' height='15vh' borderRadius='10px'>
-              
+              <Box bg='white' width='50%' height='15vh' borderRadius='10px'>
+
               </Box>
-              <Box bg='white' width='100%' height='15vh' borderRadius='10px'></Box>
+              <PieChart/>
             </Flex>
 
           </Flex>

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactApexChart from "react-apexcharts";
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import {
   LineChart,
   AreaChart,
@@ -65,7 +65,7 @@ export default function MyLineChart(props) {
     <Box width='85%' height="35vh" bg='white' borderRadius='10px'>
       <Flex justify="center" align="center"  >
         <Box w="95%" marginTop='10px'>
-          <Heading size="sm" marginBottom='15px'>Consommation actuelle</Heading>
+          <Text fontSize="xl" marginBottom='15px'>Consommation actuelle</Text>
 
           <ResponsiveContainer width="100%" height={200}>
             <AreaChart
