@@ -86,7 +86,7 @@ export default class Example extends PureComponent {
     return (
       <Box width='100%' height="38vh" bg='white' borderRadius='10px' boxShadow="1px 2px 3px rgba(0, 0, 0, 0.3)">
         <Box w="100%" marginTop='10px' >
-          <Flex gap='100px' mt='20px' ml='15px' transform='translate(6%,-3%)'>
+          <Flex gap='100px' mt='20px' ml='15px' transform='translate(5%,-3%)'>
             <Text fontSize="xl"  >Historique</Text>
 
             <DropdownCalendar/>
