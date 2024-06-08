@@ -5,31 +5,50 @@ import {
   Stat,
   StatLabel,
   StatNumber,
+  Icon,
+  Box,
   useColorModeValue,
   Text,
-  Box,
-  Icon
 } from "@chakra-ui/react";
-import { MdBarChart } from "react-icons/md";
 // Custom components
 import Card from "components/card/Card.js";
 // Custom icons
 import React from "react";
-
+import {
+  MdAddTask,
+  MdAttachMoney,
+  MdBarChart,
+  MdDateRange,
+  MdFileCopy,
+} from "react-icons/md";
 export default function Default(props) {
   const { startContent, endContent, name, growth, value, style } = props;
   const textColor = useColorModeValue("black", "white");
   const textColorSecondary = "black";
 
   return (
-    <Box bg='#FFFFFF' width='338px' height='15vh' borderRadius='10px' boxShadow="1px 2px 3px rgba(0, 0, 0, 0.3)" cursor='pointer'>
-      <Box>
-        <Text transform='translate(8%,40%)' fontSize='xl' color='#FFB038' fontWeight='bold'>Energie consommée</Text>
-        <Flex transform='translate(8%,120%)' >
-          <Icon w='20px' h='30px' as={MdBarChart} color='#FFB038'  />
-          <Text fontSize='xl' color='#FFB038' transform='translate(20%,-1%)' fontWeight={500}>90kwh</Text>
-        </Flex>
-      </Box>
+    <Box bg='#FFFFFF'
+    width='100%'
+    height='15vh'
+    borderRadius='10px'
+    cursor='pointer'
+    boxShadow="1px 2px 3px rgba(0, 0, 0, 0.3)"
+    opacity='1'
+    _hover={{
+      bg: '#FFFFFF',  // Changez la couleur de survol ici
+      opacity: '1',    // Changez l'opacité au survol
+      transition: 'all 0.3s ease-in-out' // Ajout de la transition
+    }}>
+      <Box
+    >
+      <Text color='#FFC163' fontSize='xl' transform='translate(7%,50%)'>Seuil de consommation</Text>
+      <Flex gap='5px' transform='translate(7%,60%)' color='#FFC163'>
+        <Icon  w='20px' h='35px' as={MdBarChart}  />
+        <Text fontSize='xl' transform='translate(5%,7%)'>90 kWh</Text>
+      </Flex>
+
+
     </Box>
+  </Box>
   );
 }

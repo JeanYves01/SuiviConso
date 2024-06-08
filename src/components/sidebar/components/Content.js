@@ -7,11 +7,11 @@ import Brand from "components/sidebar/components/Brand";
 import Links from "components/sidebar/components/Links";
 import SidebarCard from "components/sidebar/components/SidebarCard";
 import { NavLink } from "react-router-dom";
-import MainDashboard from "views/admin/default";
-import NFTMarketplace from "views/admin/marketplace";
-import Profile from "views/admin/profile";
-import DataTables from "views/admin/dataTables";
-import SignInCentered from "views/auth/signIn";
+import MainDashboard from "views/admin/home";
+import Conso from "views/admin/conso";
+import Contact from "views/admin/contact";
+import Rapport from "views/admin/rapport";
+import SignInCentered from "views/inscr/signIn";
 // inscr Imports
 import SignUpCentered from "views/inscr/signUp";
 import React from "react";
@@ -36,31 +36,31 @@ function SidebarContent(props) {
       direction='column' mb='auto' mt='18px' gap='7' paddingLeft='30px'>
         <HStack color='white'>
           <Icon as={MdHome} width='20px' height='20px' color='inherit' />
-          <NavLink to="/admin/default" exact activeClassName="active"  className="sidebar-link">
+          <NavLink to="/admin/home" exact activeClassName="active"  className="sidebar-link">
           Accueil
         </NavLink>
         </HStack>
         <HStack color='white'>
           <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />
-          <NavLink to="/admin/nft-marketplace" activeClassName="active"  className="sidebar-link">
+          <NavLink to="/admin/conso" activeClassName="active"  className="sidebar-link">
           Suivi Conso
         </NavLink>
         </HStack>
         <HStack color='white'>
           <Icon as={MdHome} width='20px' height='20px' color='inherit' />
-          <NavLink to="/admin/data-tables" activeClassName="active"  className="sidebar-link">
+          <NavLink to="/admin/rapport" activeClassName="active"  className="sidebar-link">
           Rapports
         </NavLink>
         </HStack>
         <HStack color='white'>
           <Icon as={MdPerson} width='20px' height='20px' color='inherit' />
-          <NavLink to="/admin/profile" activeClassName="active"  className="sidebar-link">
+          <NavLink to="/admin/contact" activeClassName="active"  className="sidebar-link">
           Contact
         </NavLink>
         </HStack>
         <HStack transform='translate(0%,800%)' color='white'>
           <Icon as={MdOutlineLogout} width='20px' height='20px' color='inherit' />
-          <NavLink to="/auth/sign-in" activeClassName="active"  className="sidebar-link">
+          <NavLink to="/inscr/signIn" activeClassName="active"  className="sidebar-link">
           Déconnexion
         </NavLink>
         </HStack>

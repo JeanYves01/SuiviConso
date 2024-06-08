@@ -38,6 +38,8 @@ import {
   InputGroup,
   InputRightElement,
   Text,
+
+  CheckboxGroup,
   useColorModeValue,
 } from "@chakra-ui/react";
 // Custom components
@@ -73,7 +75,7 @@ function SignUp() {
   const handleClick = () => setShow(!show);
   return (
     <DefaultAuth justifyContent='center'>
-      <Flex
+      <Box
         maxW={{ base: "100%", md: "max-content" }}
         w='90%'
         mx={{ base: "auto", lg: "0px" }}
@@ -84,27 +86,21 @@ function SignUp() {
         padding='10px'
         borderRadius='15px'
         bg='white'
+        zIndex="1"
         mb={{ base: "30px", md: "60px" }}
         px={{ base: "25px", md: "0px" }}
         mt={{ base: "40px", md: "14vh" }}
         flexDirection='column'>
         <Box me='auto' >
-          <Heading color={textColor} fontSize='36px' mb='8px' transform='translate(60%)'>
-            Inscription
+          <Heading color={textColor} fontSize='36px' mb='40px' transform='translate(30%)'>
+            Connexion
           </Heading>
-          {/* <Text
-            mb='36px'
-            ms='4px'
-            color={textColorSecondary}
-            fontWeight='400'
-            fontSize='md'>
-            Enter your email and password to sign in!
-          </Text> */}
+
         </Box>
         <Flex
           zIndex='2'
           direction='column'
-
+          gap='20px'
           w={{ base: "100%", md: "420px" }}
           maxW='100%'
           background='transparent'
@@ -112,51 +108,7 @@ function SignUp() {
           mx={{ base: "auto", lg: "unset" }}
           me='auto'
           mb={{ base: "20px", md: "auto" }}>
-          {/* <Button
-            fontSize='sm'
-            me='0px'
-            mb='26px'
-            py='15px'
-            h='50px'
-            borderRadius='16px'
-            bg={googleBg}
-            color={googleText}
-            fontWeight='500'
-            _hover={googleHover}
-            _active={googleActive}
-            _focus={googleActive}>
-            <Icon as={FcGoogle} w='20px' h='20px' me='10px' />
-            Sign in with Google
-          </Button> */}
-          <Flex align='center' mb='25px'>
-            {/* <HSeparator />
-            <Text color='gray.400' mx='14px'>
-              or
-            </Text>
-            <HSeparator /> */}
-          </Flex>
-          <FormControl width='75%' transform='translate(20%)'>
-            <FormLabel
-              display='flex'
-              ms='4px'
-              fontSize='sm'
-              fontWeight='500'
-              color={textColor}
-              mb='8px'>
-              Nom complet<Text color={brandStars}>*</Text>
-            </FormLabel>
-            <Input
-              isRequired={true}
-              variant='auth'
-              borderRaduis='5px'
-              fontSize='sm'
-              ms={{ base: "0px", md: "0px" }}
-              type='text'
-              placeholder='Koffi Jean Yves Vianney'
-              mb='24px'
-              fontWeight='500'
-              size='lg'
-            />
+          <FormControl width='75%' transform='translate(20%)' >
             <FormLabel
               display='flex'
               ms='4px'
@@ -205,14 +157,20 @@ function SignUp() {
                   onClick={handleClick}
                 />
               </InputRightElement>
+
             </InputGroup>
-            {/* <Link to="/ScannerPage">
-              <button>Scanner le code QR</button>
-            </Link> */}
-            <ScannerPage />
+            <Flex gap='60px' mb='30px'>
+              <Checkbox colorScheme='green' defaultChecked>
+                Enregistrer
+              </Checkbox>
+              <Link color='blue'>Mot de passe oublié?</Link>
+            </Flex>
+
+
 
             <NavLink
-              to='/inscr/signIn'
+
+              to='/admin/home'
               style={() => ({
                 width: "fit-content"
               })}>
@@ -231,7 +189,7 @@ function SignUp() {
                 w='100%'
                 h='50px'
                 mb='15px'>
-                Céer un compte
+                Se connecter
               </Button>
             </NavLink>
 
@@ -245,19 +203,19 @@ function SignUp() {
             mt='0px'>
             <Text color={textColorDetails} fontWeight='400' fontSize='14px'>
               Vous avez un compte?
-              <NavLink to='/auth'>
+              <NavLink to='/inscr'>
                 <Text
                   color={textColorBrand}
                   as='span'
                   ms='5px'
                   fontWeight='500'>
-                  Se connecter
+                  S'inscrire
                 </Text>
               </NavLink>
             </Text>
           </Flex>
         </Flex>
-      </Flex>
+      </Box>
     </DefaultAuth>
   );
 }

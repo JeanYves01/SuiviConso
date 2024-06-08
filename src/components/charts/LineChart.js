@@ -26,7 +26,7 @@ export default function MyLineChart (props) {
    
   return (
     <Flex justify="center" align="center" height="300px">
-      <Box width="95%" height="100%" transform='translate(5%,1%)'>
+      <Box width="95%" height="100%" transform='translate(5%,0%)'> 
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
             data={data}

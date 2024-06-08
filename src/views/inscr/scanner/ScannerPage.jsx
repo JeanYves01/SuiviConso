@@ -20,7 +20,7 @@ const ScannerPage = () => {
   return (
     <Center>
       <VStack height='20vh'>
-        <Button padding='10px' colorScheme="teal" onClick={startScanner}>
+        <Button padding='10px' colorScheme="teal" onClick={startScanner} borderRadius='10px'>
          scanner le code QR
         </Button>
         <video ref={videoRef} width="100px" height="80px" style={{ display: 'block' }} />

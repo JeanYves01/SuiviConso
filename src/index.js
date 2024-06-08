@@ -4,8 +4,8 @@ import 'assets/css/App.css';
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import AuthLayout from 'layouts/auth';
 import AdminLayout from 'layouts/admin';
-import RtlLayout from 'layouts/rtl';
-import SignLayout from "views/auth/signIn";
+
+import SignLayout from "views/inscr/signIn";
 import SignUpLayout from "views/inscr/signUp";
 import ScannerPage from "views/inscr/scanner/ScannerPage";
 import { ChakraProvider } from '@chakra-ui/react';
@@ -20,8 +20,8 @@ ReactDOM.render(
 					<Switch>
 						<Route path={`/auth`} component={AuthLayout} />
 						<Route path={`/admin`} component={AdminLayout} />
-						<Route path={`/rtl`} component={RtlLayout} />
-						<Route path={`/auth/signIn`} component={SignLayout} />
+			
+						<Route path={`/inscr/signIn`} component={SignLayout} />
 						<Route path={`/inscr/signUp`} component={SignUpLayout} />
 						<Route path={`/inscr/scaner/ScannerPage`} component={ScannerPage} />
 						<Redirect from='/' to='/inscr/signUp' />

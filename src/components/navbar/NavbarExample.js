@@ -138,15 +138,7 @@ export default function AuthNavbar(props) {
         </Text>
       </Link>
     );
-    // mainText = useColorModeValue("gray.700", "gray.200");
-    // navbarBg = useColorModeValue("white", "navy.800");
-    // navbarShadow = useColorModeValue(
-    //   "0px 7px 23px rgba(0, 0, 0, 0.05)",
-    //   "none"
-    // );
-    // bgButton = useColorModeValue("gray.700", "white");
-    // colorButton = useColorModeValue("white", "gray.700");
-    // navbarPosition = "fixed";
+   
   }
 
   const createPagesLinks = (routes) => {

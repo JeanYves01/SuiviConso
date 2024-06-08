@@ -11,14 +11,14 @@ import {
 } from "react-icons/md";
 
 // Admin Imports
-import MainDashboard from "views/admin/default";
-import NFTMarketplace from "views/admin/marketplace";
-import Profile from "views/admin/profile";
-import DataTables from "views/admin/dataTables";
-import RTL from "views/admin/rtl";
+import MainDashboard from "views/admin/home";
+import Conso from "views/admin/conso";
+import Contact from "views/admin/contact";
+import Rapport from "views/admin/rapport";
+
 
 // Auth Imports
-import SignInCentered from "views/auth/signIn";
+import SignInCentered from "views/inscr/signIn";
 // inscr Imports
 import SignUpCentered from "views/inscr/signUp";
 import ScannerPage from "views/inscr/scanner/ScannerPage";
@@ -27,14 +27,14 @@ const routes = [
   {
     name: "Acceuil",
     layout: "/admin",
-    path: "/default",
+    path: "/home",
     icon: <Icon as={MdHome} width='20px' height='20px' color='inherit' />,
     component: MainDashboard,
   },
   {
     name: "Suivi Conso",
     layout: "/admin",
-    path: "/nft-marketplace",
+    path: "/conso",
     icon: (
       <Icon
         as={MdBarChart}
@@ -43,27 +43,27 @@ const routes = [
         color='inherit'
       />
     ),
-    component: NFTMarketplace,
+    component: Conso,
     secondary: true,
   },
   {
     name: "Rapports",
     layout: "/admin",
     icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
-    path: "/data-tables",
-    component: DataTables,
+    path: "/rapport",
+    component: Rapport,
   },
   {
     name: "Contact",
     layout: "/admin",
-    path: "/profile",
+    path: "/contact",
     icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
-    component: Profile,
+    component: Contact,
   },
   {
     name: "Déconnexion",
-    layout: "/auth",
-    path: "/sign-in",
+    layout: "/inscr",
+    path: "/signIn",
     icon: <Icon as={MdOutlineLogout} width='20px' height='20px' color='inherit' />,
     component: SignInCentered,
   },

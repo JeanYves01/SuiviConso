@@ -1,8 +1,9 @@
 // Chakra imports
-import { Box, Flex, Icon, Text } from "@chakra-ui/react";
+import { Box, Flex, Icon, Image, Text } from "@chakra-ui/react";
 import PropTypes from "prop-types";
 import React from "react";
 import FixedPlugin from "components/fixedPlugin/FixedPlugin";
+import cieImage from 'assets/img/cie.jpg';
 // Custom components
 import { NavLink } from "react-router-dom";
 // Assets
@@ -13,9 +14,17 @@ function AuthIllustration(props) {
     <Flex position='relative' h='max-content' >
       <Flex>
       </Flex>
-      <Text fontSize='36px' fontWeight='bold' color='#008F75'>
-        SuiviConso
-      </Text>
+      <Flex>
+        <Text fontSize='36px' fontWeight='bold' color='#008F75'>
+          SuiviConso.
+        </Text>
+        <Image
+          transform='translate(2400%,55%)'
+          height='30px'
+          width='50px'
+          src={cieImage}
+        />
+      </Flex>
 
 
 

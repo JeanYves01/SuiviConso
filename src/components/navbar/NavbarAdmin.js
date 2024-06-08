@@ -24,7 +24,7 @@ export default function AdminNavbar(props) {
 	let navbarFilter = 'none';
 	let navbarBackdrop = 'blur(20px)';
 	let navbarShadow = 'none';
-	let navbarBg = useColorModeValue('rgb(255, 255, 255)', 'rgba(11,20,55,0.5)');
+	let navbarBg = useColorModeValue('rgba(244, 247, 254, 0.2)', 'rgba(11,20,55,0.5)');
 	let navbarBorder = 'transparent';
 	let secondaryMargin = '0px';
 	let paddingX = '15px';
@@ -41,7 +41,7 @@ export default function AdminNavbar(props) {
 		<Box
 			position={navbarPosition}
 			boxShadow={navbarShadow}
-			bg={navbarBg}
+			bg='white'
 			borderColor={navbarBorder}
 			filter={navbarFilter}
 			backdropFilter={navbarBackdrop}
@@ -60,7 +60,7 @@ export default function AdminNavbar(props) {
 			justifyContent={{ xl: 'center' }}
 			lineHeight='25.6px'
 			mx='auto'
-			// mt={secondaryMargin}
+			mt={secondaryMargin}
 			pb='8px'
 			right={{ base: '12px', md: '30px', lg: '30px', xl: '30px' }}
 			px={{

@@ -41,13 +41,13 @@ function Sidebar(props) {
 
   // SIDEBAR
   return (
-    <Box display={{ sm: "none", xl: "block" }} w="100%" position='absolute' minH='100%' transform='translate(0%, 7%)'>
+    <Box display={{ sm: "none", xl: "block" }} w="100%" position='absolute' minH='100%'>
       <Box
         bg={sidebarBg}
         transition={variantChange}
         w='220px'
         h='550px'
-        transform='translate(22%,19%)'
+        transform='translate(22%,27%)'
         minH='100%'
         overflowX='hidden'
         borderRadius= '17px'

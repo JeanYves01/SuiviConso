@@ -1,4 +1,4 @@
-<!--
+/*!
   _   _  ___  ____  ___ ________  _   _   _   _ ___   
  | | | |/ _ \|  _ \|_ _|__  / _ \| \ | | | | | |_ _| 
  | |_| | | | | |_) || |  / / | | |  \| | | | | || | 
@@ -18,23 +18,31 @@
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
--->
+*/
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <title itemprop="name">
-     SuiviConso</title>
-    <!-- Manifest and apple icon -->
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
-</html>
+// Chakra imports
+import React from "react";
+
+import {
+  MdAddTask,
+  MdAttachMoney,
+  MdBarChart,
+  MdFileCopy,
+} from "react-icons/md";
+import { Box, SimpleGrid, useColorModeValue, Icon } from "@chakra-ui/react";
+import DevelopmentTable from "views/admin/rapport/components/DevelopmentTable";
+
+
+
+export default function Settings() {
+  // Chakra Color Mode
+  const brandColor = useColorModeValue("black", "white");
+  return (
+
+    <DevelopmentTable
+
+    />
+  );
+}
+   
+
