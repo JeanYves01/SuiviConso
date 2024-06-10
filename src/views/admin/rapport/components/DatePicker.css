@@ -1,0 +1,22 @@
+.custom-datepicker {
+    border: 1px solid #000000; 
+    width: 180px;
+    border-radius: 4px;
+    
+  }
+  .custom-datepicker::placeholder {
+    text-align: center; /* Center the placeholder text */
+  }
+  .custom-datepicker:focus {
+    border-color: #000000; /* Define the border color when focused */
+  
+  }
+
+  .react-datepicker-popper {
+    z-index: 2; /* Ensure the calendar is above other elements */
+  }
+  
+  .react-datepicker {
+    transform-origin: bottom; /* Ensure the animation originates from the bottom */
+  }
+  

@@ -11,15 +11,14 @@ function AuthIllustration(props) {
   const { children, illustrationBackground } = props;
   // Chakra color mode
   return (
-    <Flex position='relative' h='max-content' >
+    <Flex position='relative' h='max-content' w={{base:"550px", md:"100%", lg:"100%"}}>
+     
       <Flex>
-      </Flex>
-      <Flex>
-        <Text fontSize='36px' fontWeight='bold' color='#008F75'>
+        <Text fontSize={{base: '24px', md: '36px', lg: '36px'}} fontWeight='bold' color='#008F75' transform={{base: 'translate(15%,1%)', md: 'translate(5%,1%)', lg: 'translate(5%,1%)'}}>
           SuiviConso.
         </Text>
         <Image
-          transform='translate(2400%,55%)'
+          transform={{base: 'translate(700%,60%)', md: 'translate(2%,55%)', lg: 'translate(2400%,55%)'}}
           height='30px'
           width='50px'
           src={cieImage}
@@ -30,18 +29,19 @@ function AuthIllustration(props) {
 
       <Flex
         h={{
-          sm: "initial",
+          base: "80vh",
           md: "unset",
           lg: "100vh",
           xl: "97vh",
         }}
-        w='50%'
-        maxW={{ md: "66%", lg: "1313px" }}
-        mx='auto'
+        w={{base:'100%', md: '50%', lg:'50%'}}
+        
+        p={{ base: "1px", md: "0px" }}
         pt={{ sm: "50px", md: "0px" }}
         px={{ lg: "30px", xl: "0px" }}
         ps={{ xl: "70px" }}
         justifyContent='center'
+        transform={{base: "translate(-17%,10%)" ,md: "translate(-25%,10%)", lg: "translate(30%,0%)"}}
         direction='column'>
         {children}
         <Box

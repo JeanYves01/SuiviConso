@@ -37,6 +37,7 @@ export default function Default(props) {
     _hover={{
       bg: '#FFFFFF',  // Changez la couleur de survol ici
       opacity: '1',    // Changez l'opacité au survol
+      transform: 'scale(1.05)',
       transition: 'all 0.3s ease-in-out' // Ajout de la transition
     }}>
       <Box

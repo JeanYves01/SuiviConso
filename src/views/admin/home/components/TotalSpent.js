@@ -43,23 +43,27 @@ export default function TotalSpent(props) {
   return (
 
     <Box w={{ base: '100%', md: '204%', lg: '203%' }}
-    h={{ base: '45%', md: '80vh', lg: '51vh' }} borderRadius='10px' boxShadow="1px 2px 3px rgba(0, 0, 0, 0.3)" transform='translate(0%,8%)'>
+      h={{ base: '80%', md: '80vh', lg: '51vh' }} borderRadius='10px' boxShadow="1px 2px 3px rgba(0, 0, 0, 0.3)" transform='translate(0%,8%)'>
       <Flex w='100%' flexDirection={{ base: 'column', md: 'row' }} align='center' gap='200px' transform='translate(0%,1%)'>
         <Text
           color={textColor}
-          fontSize='xl'
+          fontSize={{ base: 'xl', md: 'xl', lg: "xl" }}
           textAlign={{ base: 'center', md: 'start' }}
           fontWeight='500'
           mb={{ base: '10px', md: '0' }}
-          ml={{ base: '0px', md: '8px', lg:'15px'}}
+          ml={{ base: '0px', md: '8px', lg: '15px' }}
         >
           Consommation depuis le dernier mois
         </Text>
-        <DatePicke />
+        <Box transform={{ base: 'translate(4%,-700%)', md:  'translate(-10%,0%)', lg: 'translate(90%,-5%)' }}    >
+          <DatePicke />
+        </Box>
       </Flex>
 
-      <Flex w='100%' flexDirection={{ base: 'column', lg: 'row' }} align='center' height='20%' transform='translate(0%,180%)'>
-        <Box minH='260px' w={{ base: '100%', lg: '90%' }} mt='15px'>
+      <Flex className="flex " w='100%' flexDirection={{ base: 'column', lg: 'row' }} align='center' height='20%' transform={{ base: 'translate(-4%,-170%)', lg: 'translate(0%,155%)' }}    >
+        <Box height={{ base: '260px', lg: '100%' }}    w={{ base: '100%', lg: '90%' }}  transform={{ base: 'translate(0%,0%)', md:  'translate(0%,100%)', lg: 'translate(0%,-110%)' }}>
+
+
           <LineChart />
         </Box>
       </Flex>

@@ -89,7 +89,7 @@ function SignUp() {
         mt={{ base: "40px", md: "14vh" }}
         flexDirection='column'>
         <Box me='auto' >
-          <Heading color={textColor} fontSize='36px' mb='8px' transform='translate(60%)'>
+          <Heading color={textColor} fontSize='36px' mb='8px' transform={{base:'translate(45%)', md:'translate(60%)', lg:'translate(60%)'}}>
             Inscription
           </Heading>
           {/* <Text

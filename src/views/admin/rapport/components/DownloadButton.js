@@ -18,9 +18,9 @@ export default function DownloadButton(props) {
             <Button
                 height='4vh'
                 
-                transform='translate(0%,7px)'
+                transform='translate(0%,0%)'
                 borderRadius='5px'
-                bg='#53FE63'
+                bg='#008F75'
                 color='white'
                 fontWeight='bold'
                 onClick={handleDownload}

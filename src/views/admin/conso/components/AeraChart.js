@@ -64,7 +64,7 @@ export default function MyLineChart(props) {
   return (
     <Box width='95%' height="32vh" bg='white' boxShadow="1px 2px 3px rgba(0, 0, 0, 0.3)" borderRadius='10px'>
       <Flex justify="center" align="center"  >
-        <Box w="95%" marginTop='10px'>
+        <Box w="95%" marginTop={{ base: "5px", md: "10px", lg: "10px", }}>
           <Text fontSize="xl" marginBottom='2px' transform='translate(6%,-3%)'>Consommation actuelle</Text>
 
           <ResponsiveContainer width="100%" height={200}>

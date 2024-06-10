@@ -1,6 +1,7 @@
 // ContactForm.js
 import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
+
 // Chakra imports
 import {
     Box,
@@ -13,18 +14,31 @@ import {
     Icon,
     Link,
     Input,
+    Menu,
+    MenuButton,
+    MenuItem,
+    MenuList,
+    Spinner,
+    useColorModeValue,
     InputGroup,
     InputRightElement,
     Text,
-    useColorModeValue,
+
     Textarea,
 } from "@chakra-ui/react";
 import Card from "components/card/Card.js";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiEyeCloseLine } from "react-icons/ri";
 import backgroundImage from "assets/img/contact/vecteurAC2.jpg";
+import { MdCheckCircle, MdCheckCircleOutline, MdDangerous, MdEmergency, MdEmergencyRecording, MdEmergencyShare, MdOutlineDangerous, MdOutlineWarning, MdOutlineWarningAmber, MdWarning } from "react-icons/md";
 
 const ContactForm = () => {
+    let menuBg = useColorModeValue('white', 'navy.800');
+
+    const shadow = useColorModeValue(
+        '14px 17px 40px 4px rgba(112, 144, 176, 0.18)',
+        '14px 17px 40px 4px rgba(112, 144, 176, 0.06)'
+    );
     const textColor = useColorModeValue("black", "white");
     const btnColor = "orange";
     const backColor = "gray";
@@ -46,39 +60,50 @@ const ContactForm = () => {
             [name]: value
         });
     };
-    const [show, setShow] = React.useState(false);
-    const handleClick = () => setShow(!show);
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    // const [show, setShow] = React.useState(false);
+    // const handleClick = () => setShow(!show);
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
 
-        try {
-            const response = await fetch('your-server-endpoint', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            });
+    //     try {
+    //         const response = await fetch('your-server-endpoint', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             },
+    //             body: JSON.stringify(formData)
+    //         });
 
-            if (response.ok) {
-                setResponseMessage('Message sent successfully!');
-                setFormData({
-                    name: '',
-                    email: '',
-                    message: ''
-                });
-            } else {
-                throw new Error('Network response was not ok.');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            setResponseMessage('An error occurred. Please try again.');
-        }
+    //         if (response.ok) {
+    //             setResponseMessage('Message sent successfully!');
+    //             setFormData({
+    //                 name: '',
+    //                 email: '',
+    //                 message: ''
+    //             });
+    //         } else {
+    //             throw new Error('Network response was not ok.');
+    //         }
+    //     } catch (error) {
+    //         console.error('Error:', error);
+    //         setResponseMessage('An error occurred. Please try again.');
+    //     }
 
+    // };
+    const [isLoading, setIsLoading] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
+    const handleClick = () => {
+        setIsLoading(true);
+        // Simulate an async operation (e.g., API call)
+        setTimeout(() => {
+            setIsLoading(false);
+            setIsSubmitted(true);
+        }, 2000); // Adjust the timeout to your needs
     };
 
     return (
-        <Card mt={{ base: "100px", md: "80px", xl: "76px", }} height={{ base: 'auto', md: '75vh', lg: '75vh' }} bg='white' transform='translate(0%, 7%)'>
+        <Card mt={{ base: "50px", md: "80px", xl: "76px", }} height={{ base: 'auto', md: '75vh', lg: '75vh' }} bg='white' transform='translate(0%, 7%)'>
             <Flex
                 color='white'
                 justifyContent='center'
@@ -102,7 +127,7 @@ const ContactForm = () => {
                             fontSize={{ base: '2xl', md: 'xl' }}
                             mb='3px'
                             width='100%'
-                            transform={{ base: 'translate(30%, 0%)', md: 'translate(20%, 14%)' }}
+                            transform={{ base: 'translate(27%, 0%)', md: 'translate(20%, 14%)' }}
                             position='relative'
                         >
                             Contactez-nous
@@ -163,22 +188,32 @@ const ContactForm = () => {
                                 focusBorderColor="orange.400"
                                 required
                             />
-                            <NavLink
-                                to='/auth'
-                                style={() => ({
-                                    width: "fit-content"
-                                })}
-                            >
-                                <Button
-                                    fontSize='sm'
-                                    background={btnColor}
-                                    fontWeight='bold'
-                                    w='100%'
-                                    h='50'
-                                    mb='24px'
-                                >
-                                    Envoyer
-                                </Button>
+                            <NavLink to='/admin/contact' style={{ width: "fit-content" }}>
+                                <Menu w="100%">
+                                    <MenuButton
+                                        onClick={handleClick}
+                                        fontSize='xl-s'
+                                        background={btnColor} // Replace `btnColor` with your color value
+                                        fontWeight='bold'
+                                        w='100%'
+                                        h='50'
+                                        mb='24px'
+                                        borderRadius='10px'>
+                                        Envoyer
+                                    </MenuButton>
+                                    <MenuList boxShadow='lg' p="0px" ml={{ base: '0px', md: '410px', lg: '770px' }} mb={{ base: '120px', md: '370px', lg: '400px' }} borderRadius="15px" bg='white' border="none" height='10vh'>
+                                        {isLoading ? (
+                                            <Flex justify='center' align='center' height='100%'>
+                                                <Spinner size='lg'  color={btnColor}/>
+                                            </Flex>
+                                        ) : isSubmitted ? (
+                                            <Flex transform= 'translate(15%,75%)' gap='5px'>
+                                                <Text color='black'>Message envoyé</Text>
+                                                <Icon w='28px' h='28px' as={MdCheckCircleOutline} color='green.500' />
+                                            </Flex>
+                                        ) : null}
+                                    </MenuList>
+                                </Menu>
                             </NavLink>
                         </FormControl>
                     </Box>

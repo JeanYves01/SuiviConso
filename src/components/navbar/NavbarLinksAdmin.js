@@ -11,8 +11,10 @@ import {
 	MenuItem,
 	MenuList,
 	Text,
-	useColorModeValue
+	useColorModeValue,
 } from '@chakra-ui/react';
+import { NavLink } from "react-router-dom";
+
 // Custom Components
 import { ItemContent } from 'components/menu/ItemContent';
 import { SearchBar } from 'components/navbar/searchBar/SearchBar';
@@ -52,7 +54,7 @@ export default function HeaderLinks(props) {
 			borderRadius="30px"
 			boxShadow={shadow}>
 			<SearchBar mb={secondary ? { base: '10px', md: 'unset' } : 'unset'} me="10px" borderRadius="30px" />
-			
+
 			<SidebarResponsive routes={routes} />
 			<Menu>
 				<MenuButton p="0px">
@@ -76,11 +78,11 @@ export default function HeaderLinks(props) {
 							Marquer comme lu
 						</Text>
 					</Flex>
-					
+
 				</MenuList>
 			</Menu>
 
-      
+
 
 			<ThemeEditor navbarIcon={navbarIcon} />
 
@@ -115,14 +117,22 @@ export default function HeaderLinks(props) {
 						<MenuItem _hover={{ bg: 'none' }} _focus={{ bg: 'none' }} borderRadius="8px" px="14px">
 							<Text fontSize="sm">Profil </Text>
 						</MenuItem>
-						
+
 						<MenuItem
 							_hover={{ bg: 'none' }}
 							_focus={{ bg: 'none' }}
 							color="red.400"
 							borderRadius="8px"
 							px="14px">
-							<Text fontSize="sm">Déconnexion</Text>
+
+							<NavLink
+								to='/inscr/signIn'
+								style={() => ({
+									width: "fit-content"
+								})}>
+
+								<Text fontSize="sm">Déconnexion</Text>
+							</NavLink>
 						</MenuItem>
 					</Flex>
 				</MenuList>

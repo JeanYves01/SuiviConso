@@ -76,8 +76,8 @@ function SignUp() {
   return (
     <DefaultAuth justifyContent='center'>
       <Box
-        maxW={{ base: "100%", md: "max-content" }}
-        w='90%'
+        maxW={{ base: "100%", md: "max-content", lg: "90%"}}
+        w={{base:'100%', md:"100%", lg:"70%"}}
         mx={{ base: "auto", lg: "0px" }}
         me='auto'
         h='160vh'
@@ -105,6 +105,7 @@ function SignUp() {
           maxW='100%'
           background='transparent'
           borderRadius='15px'
+          transform={{base:'translate(0%,0%)', md:'translate(7%)', lg:'translate(7%)'}}
           mx={{ base: "auto", lg: "unset" }}
           me='auto'
           mb={{ base: "20px", md: "auto" }}>

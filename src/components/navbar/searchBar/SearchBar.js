@@ -22,7 +22,7 @@ export function SearchBar(props) {
 
 
 
-    <InputGroup w={{ base: "100%", md: "200px" }} {...rest} >
+    <InputGroup w={{ base: "60%", md: "200px" }} {...rest} >
       <InputLeftElement
         children={
           <IconButton

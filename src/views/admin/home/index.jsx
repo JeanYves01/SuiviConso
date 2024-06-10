@@ -42,7 +42,7 @@ import {
   MenuList,
   Text,
   useColorModeValue,
-
+  Spinner,
   Input,
 } from "@chakra-ui/react";
 // Assets
@@ -53,7 +53,7 @@ import MiniStatistics from "components/card/MiniStatistics";
 import Seuil from "components/card/Seuil";
 import Remaning from "components/card/Remaning";
 import IconBox from "components/icons/IconBox";
-import React from "react";
+import React, { useState } from "react";
 import {
   MdAddTask,
   MdAttachMoney,
@@ -76,12 +76,14 @@ import tableDataCheck from "views/admin/home/variables/tableDataCheck.json";
 import tableDataComplex from "views/admin/home/variables/tableDataComplex.json";
 import Card from "components/card/Card.js";
 import DatePicker from "views/admin/rapport/components/DatePicker";
+import 'react-datepicker/dist/react-datepicker.css';
 
-export  default function UserReports() {
+export default function UserReports() {
   // Chakra Color Mode
   const brandColor = useColorModeValue("black", "white");
   const orangeColor = "#FFD18B";
   const blueColor = "#BBF5FF";
+  const btnColor = "orange";
   const boxBg = useColorModeValue("orange.50", "");
   const bgSeuil = useColorModeValue("orange.50", "whiteAlpha.100");
   let menuBg = useColorModeValue('white', 'navy.800');
@@ -91,8 +93,19 @@ export  default function UserReports() {
     '14px 17px 40px 4px rgba(112, 144, 176, 0.06)'
   );
   const borderColor = useColorModeValue('#E6ECFA', 'rgba(135, 140, 189, 0.3)');
+  const [isLoading, setIsLoading] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleConfirmClick = () => {
+    setIsLoading(true);
+    // Simulate an async operation (e.g., API call)
+    setTimeout(() => {
+      setIsLoading(false);
+      setIsMenuOpen(false); // Close the menu
+    }, 2000); // Adjust the timeout to your needs
+  };
   return (
-    <Card mt={{ base: "180px", md: "80px", xl: "76px", }} height={{ base: "100vh", md: "75vh", xl: "75vh", }} bg='white' transform='translate(0%, 7%)'>
+    <Card mt={{ base: "80px", md: "80px", xl: "76px", }}  height={{ base: "110vh", md: "155vh", xl: "75vh", }} bg='white' transform='translate(0%, 7%)' pt={{ base: "60px", md: "100px", lg: "20px"}}>
       <Box pt={{ base: "120px", md: "80px", xl: "80px" }} marginLeft='40px' marginRight='40px' transform='translate(0%,-14%)' height='auto'>
         <SimpleGrid
           columns={{ base: 1, md: 1, lg: 3, "2xl": 6 }}
@@ -100,28 +113,29 @@ export  default function UserReports() {
 
 
         >
-          <Menu w="100%">
-            <MenuButton width='323px' height='15vh' borderRadius='10px' bg='#FFC163'
+          <Menu w="100%" isOpen={isMenuOpen} onOpen={() => setIsMenuOpen(true)} onClose={() => setIsMenuOpen(false)}>
+            <MenuButton width='100%' height='15vh' borderRadius='10px' bg='#FFC163'
               cursor='pointer'
               boxShadow="1px 2px 3px rgba(0, 0, 0, 0.3)"
 
               _hover={{
                 bg: '#EF7D00',  // Changez la couleur de survol ici
                 opacity: '1',    // Changez l'opacité au survol
+                transform: 'scale(1.05)',
                 transition: 'all 0.3s ease-in-out' // Ajout de la transition
               }}>
               <Seuil
-                 
+
 
 
               />
             </MenuButton>
-            <MenuList boxShadow={shadow} p="0px" mt="10px" borderRadius="15px" bg={menuBg} border="none" height='20vh'>
-              <Flex w="100%" mb="0px" borderBottom="1px solid" borderColor={borderColor}>
+            <MenuList boxShadow='4px 0px 10px rgba(0,0,0,0.2)' p="0px" mt="10px" borderRadius="15px" bg={menuBg} border="none" height='25vh'>
+              <Flex w="100%" mb="0px" gap='5px' borderBottom="1px solid" borderColor={borderColor}>
                 <Text
-                  ps="20px"
-                  pt="16px"
-                  pb="10px"
+                  ps="10px"
+                  pt="5px"
+                  pb="15px"
                   w="80%"
 
                   borderColor={borderColor}
@@ -130,7 +144,7 @@ export  default function UserReports() {
                   color={textColor}>
                   Choisir la période
                 </Text>
-                <DatePicker/>
+                <DatePicker />
               </Flex>
               <Flex flexDirection="row" p="25px">
                 <FormLabel
@@ -139,7 +153,7 @@ export  default function UserReports() {
                   fontSize='sm'
                   fontWeight='500'
                   color={textColor}
-
+                  mt='5px'
                 >
                   Définir le seuil en (kWh)
                 </FormLabel>
@@ -157,6 +171,9 @@ export  default function UserReports() {
 
                 />
               </Flex>
+              <Button bg={btnColor} color='white' borderRadius='10px' fontSize='xl-s' transform='translate(80%,-20%)' onClick={handleConfirmClick}
+              >
+                {isLoading  ?  <Spinner size='sm' /> : 'Confirmer' }</Button>
             </MenuList>
           </Menu>
 

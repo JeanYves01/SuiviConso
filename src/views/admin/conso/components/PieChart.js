@@ -55,8 +55,8 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 export default function MyPieChart(props) {
   return (
     <Box width="50%" height="18vh" bg='white' borderRadius='10px' boxShadow="1px 2px 3px rgba(0, 0, 0, 0.3)" >
-      <Text fontSize='xl' transform='translate(5%, 0%)'>Intensité du circuit</Text>
-      <Box transform='translate(-4%,3%)'>
+      <Text fontSize={{base:'xl-sm', md:'xl', lg:'xl'}} transform={{base:'translate(7%,15%)',md:'translate(3%,2%)', lg:'translate(3%,2%)'}}>Intensité du circuit</Text>
+      <Box transform={{ base: 'translate(-40%,5%)', md: 'translate(-4%,3%)', lg: 'translate(-4%,3%)'}}>
         <PieChart width={400} height={500} >
           <defs>
             <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">

@@ -21,227 +21,228 @@ import MiniStatistics from "components/card/MiniStatistics";
 import DropdownCalendar from "views/admin/rapport/components/Calendrier";
 import DownloadButton from "views/admin/rapport/components/DownloadButton";
 import Card from "components/card/Card.js";
+import DatePicke from './DatePicker';
 
 export default function DevelopmentTable(props) {
 
   return (
-    <Card mt={{ base: "100px", md: "80px", xl: "76px", }} height={{ base: 'auto', md: '75vh', lg: '75vh' }} bg='white' transform='translate(0%, 7%)'>
-      <Box width={{ base: '100%', md: '90%', lg: '100%' }} mx='auto' transform='translate(0%, -23%)' height='50vh'>
-  <Grid
-    bg='white'
-    mt='78px'
-    width='100%'
-    height={{ base: 'auto', md: '24vh' }}
-    pb='20px'
-    boxShadow="1px 2px 3px rgba(0, 0, 0, 0.3)"
-    borderRadius='5px'
-    p={{ base: '10px', md: '20px' }}
-  >
-    <Box
-      width='100%'
-      mb='10px'
-      display='flex'
-      flexDirection={{ base: 'column', md: 'row' }}
-      alignItems='center'
-    >
-      <Text fontWeight='bold' mb={{ base: '10px', md: '0' }} mr='auto'>
-        Rapport disponible
-      </Text>
-      <Box display='flex' alignItems='center'>
-        <DropdownCalendar />
-      
-        <DownloadButton />
-      </Box>
-    </Box>
-    <hr />
-    <SimpleGrid
-      columns={{ base: 1, md: 4, lg: 4, "2xl": 6 }}
-      width={{ base: 'auto', md: '100%', lg: '100%' }}
-      gap='15px'
-      mb='0px'
-      mt='15px'
-      justifyContent='center'
-    >
-      {['Rapport 1', 'Rapport 2', 'Rapport 3', 'Rapport 4'].map((rapport, index) => (
-        <Box
-          key={index}
+    <Card mt={{ base: "50px", md: "80px", xl: "76px", }} height={{ base: '120vh', md: '75vh', lg: '75vh' }} bg='white' transform='translate(0%, 7%)'>
+      <Box width={{ base: '100%', md: '90%', lg: '100%' }} mx='auto' transform={{base:'translate(0%, -10%)', md:'translate(0%, -23%)', lg:'translate(0%, -23%)'}} height='50vh'>
+        <Grid
           bg='white'
-          height='12vh'
+          mt='78px'
           width='100%'
-          borderRadius='10px'
-          border='1px solid navy'
-          boxShadow={`inset 6px 0 ${index < 3 ? 'rgb(155, 219, 20)' : 'rgb(67, 248, 237)'}`}
-          display='flex'
-          flexDirection='column'
-          justifyContent='center'
-          alignItems='center'
-          textAlign='center'
-          p='10px'
+          height={{ base: 'auto', md: '24vh' }}
+          pb='20px'
+          boxShadow="1px 2px 3px rgba(0, 0, 0, 0.3)"
+          borderRadius='5px'
+          p={{ base: '10px', md: '20px' }}
         >
-          <Text>{rapport}</Text>
-          <Button
-            width='90px'
-            height='27px'
-            bg={index < 3 ? '#9bdb14' : '#43f8ed'}
-            color='white'
-            fontWeight='bold'
-            borderRadius='5px'
-            mt='10px'
+          <Box
+            width='100%'
+            mb='10px'
+            display='flex'
+            flexDirection={{ base: 'column', md: 'row' }}
+            alignItems='center'
           >
-            {index < 3 ? 'Terminer' : 'En cours'}
-          </Button>
-        </Box>
-      ))}
-    </SimpleGrid>
-  </Grid>
-  <TableContainer
-    justifyContent='center'
-    width='100%'
-    height={{ base: 'auto', md: '45vh' }}
-    mt='19px'
-    bg='white'
-    borderRadius='5px'
-    boxShadow="1px 2px 3px rgba(0, 0, 0, 0.3)"
-    p={{ base: '10px', md: '20px' }}
-  >
-    <Table variant='simple' colorScheme='teal'>
-      <Thead bg='orange.500'>
-        <Tr>
-          <Th>Période</Th>
-          <Th>Durée (jour)</Th>
-          <Th isNumeric>Conso (kWh)</Th>
-          <Th isNumeric>Moy (kWh/j)</Th>
-        </Tr>
-      </Thead>
-      <Tbody>
-        {[...Array(5)].map((_, index) => (
-          <Tr key={index}>
-            <Td>02/04-04/04 2024</Td>
-            <Td>02</Td>
-            <Td transform='translate(50%,0%)'>15</Td>
-            <Td isNumeric>5.4</Td>
-          </Tr>
-        ))}
-      </Tbody>
-      <Tfoot>
-        <Tr>
-          <Th>Total</Th>
-          <Th>23</Th>
-          <Th>73</Th>
-          <Th isNumeric>35.5</Th>
-        </Tr>
-      </Tfoot>
-    </Table>
-  </TableContainer>
-</Box>
-   </Card>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+            <Text fontWeight='bold' mb={{ base: '10px', md: '0' }} mr='auto' transform={{ base: 'translate(60%,0%)' }}>
+              Rapport disponible
+            </Text>
+            <Box display='flex' alignItems='center' gap={{ base: '20px', md: '80px', lg: '80px' }} flexDirection={{ base: 'column', md: 'row' }} >
+              <DatePicke />
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+              <DownloadButton />
+            </Box>
+          </Box>
+          <hr />
+          <SimpleGrid
+            columns={{ base: 1, md: 4, lg: 4, "2xl": 6 }}
+            width={{ base: 'auto', md: '100%', lg: '100%' }}
+            gap='15px'
+            mb='0px'
+            mt='15px'
+            justifyContent='center'
+          >
+            {['Rapport 1', 'Rapport 2', 'Rapport 3', 'Rapport 4'].map((rapport, index) => (
+              <Box
+                key={index}
+                bg='white'
+                height='12vh'
+                width='100%'
+                borderRadius='10px'
+                border='1px solid navy'
+                boxShadow={`inset 6px 0 ${index < 3 ? 'rgb(155, 219, 20)' : 'rgb(67, 248, 237)'}`}
+                display='flex'
+                flexDirection='column'
+                justifyContent='center'
+                alignItems='center'
+                textAlign='center'
+                p='10px'
+              >
+                <Text>{rapport}</Text>
+                <Button
+                  width='90px'
+                  height='27px'
+                  bg={index < 3 ? '#9bdb14' : '#43f8ed'}
+                  color='white'
+                  fontWeight='bold'
+                  borderRadius='5px'
+                  mt='10px'
+                >
+                  {index < 3 ? 'Terminer' : 'En cours'}
+                </Button>
+              </Box>
+            ))}
+          </SimpleGrid>
+        </Grid>
+        <TableContainer
+          justifyContent='center'
+          width='100%'
+          height={{ base: 'auto', md: '45vh' }}
+          mt='19px'
+          bg='white'
+          borderRadius='5px'
+          boxShadow="1px 2px 3px rgba(0, 0, 0, 0.3)"
+          p={{ base: '10px', md: '20px' }}
+        >
+          <Table variant='simple' colorScheme='teal'>
+            <Thead bg='orange.500'>
+              <Tr>
+                <Th>Période</Th>
+                <Th>Durée (jour)</Th>
+                <Th isNumeric>Conso (kWh)</Th>
+                <Th isNumeric>Moy (kWh/j)</Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {[...Array(5)].map((_, index) => (
+                <Tr key={index}>
+                  <Td>02/04-04/04 2024</Td>
+                  <Td>02</Td>
+                  <Td transform='translate(50%,0%)'>15</Td>
+                  <Td isNumeric>5.4</Td>
+                </Tr>
+              ))}
+            </Tbody>
+            <Tfoot>
+              <Tr>
+                <Th>Total</Th>
+                <Th>23</Th>
+                <Th>73</Th>
+                <Th isNumeric>35.5</Th>
+              </Tr>
+            </Tfoot>
+          </Table>
+        </TableContainer>
+      </Box>
+    </Card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   );
 
 
