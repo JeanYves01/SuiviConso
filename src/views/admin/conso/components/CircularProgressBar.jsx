@@ -25,7 +25,7 @@ export default function CircularProgressCountUp() {
       <Text transform={{base:'translate(7%,15%)',md:'translate(3%,2%)', lg:'translate(3%,2%)'}} fontSize={{base:'xl-sm', md:'xl', lg:'xl'}}>Puissance</Text>
       <Flex>
         <CircularProgress value={63} size="98px" thickness="6px" color="#FFC163" transform={{base: 'translate(30%,0%)', md: 'translate(80%,0%)', lg: 'translate(80%,0%)'}} />
-        <CircularProgressLabel position="fixed" color="black" fontWeight="bold" fontSize transform={{ base: 'translate(-72%,790%)', md: 'translate(-36.5%,-306%)', lg: 'translate(-36.5%,-260%)', }} >
+        <CircularProgressLabel position="fixed" color="black" fontWeight="bold" fontSize transform={{ base: 'translate(-72%,790%)', md: 'translate(-36.5%,-306%)', lg: 'translate(-36%,-295%)', }} >
           18kwh
         </CircularProgressLabel>
         {/* <Flex flexDirection='column' transform='translate(90%,25%)'>

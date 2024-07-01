@@ -12,12 +12,14 @@ import {
 } from "@chakra-ui/react";
 // Custom components
 import Card from "components/card/Card.js";
+
 // Custom icons
 import React from "react";
 import {
   MdAddTask,
   MdAttachMoney,
   MdBarChart,
+  MdBolt,
   MdDateRange,
   MdFileCopy,
 } from "react-icons/md";
@@ -42,9 +44,9 @@ export default function Default(props) {
     }}>
       <Box
     >
-      <Text color='#FFC163' fontSize='xl' transform='translate(7%,50%)'>Seuil de consommation</Text>
+      <Text color='#FFC163' fontSize='xl' transform='translate(7%,50%)'>Energie consommée</Text>
       <Flex gap='5px' transform='translate(7%,60%)' color='#FFC163'>
-        <Icon  w='20px' h='35px' as={MdBarChart}  />
+        <Icon  w='20px' h='35px' as={MdBolt} />
         <Text fontSize='xl' transform='translate(5%,7%)'>90 kWh</Text>
       </Flex>
 
